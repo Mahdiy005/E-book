@@ -1,0 +1,59 @@
+/* ----------------------- */
+/* ---- Global Rules------ */
+/* ----------------------- */
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+:root {
+  --main-color: #1f1b24;
+  --second-color: #bb86fc;
+  --thirs-color: #03dac5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------- */
+/* ---- end Global Rules------ */
+/* --------------------------- */
+
+/* ---------------------- */
+/* ----- Start Header --- */
+/* ---------------------- */
