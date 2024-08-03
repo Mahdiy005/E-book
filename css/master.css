@@ -15,6 +15,7 @@ ul {
 
 body {
   font-family: "Ubuntu", sans-serif;
+  background-color: var(--main-color);
 }
 
 .container {
@@ -44,6 +45,7 @@ body {
   --main-color: #1f1b24;
   --second-color: #bb86fc;
   --thirs-color: #03dac5;
+  --trans: 0.3s;
 }
 
 html {
@@ -56,4 +58,143 @@ html {
 
 /* ---------------------- */
 /* ----- Start Header --- */
+/* ---------------------- */
+.header {
+  padding: 30px;
+  border-bottom: 1px solid var(--thirs-color);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.header .logo {
+  font-size: 27px;
+  color: var(--second-color);
+  font-weight: bold;
+  width: 103px;
+}
+
+.header nav {
+  flex: 1;
+}
+
+.header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header nav ul a {
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--thirs-color);
+  transition: var(--trans);
+  -webkit-transition: var(--trans);
+  -moz-transition: var(--trans);
+  -ms-transition: var(--trans);
+  -o-transition: var(--trans);
+}
+
+.header nav ul a:hover {
+  color: var(--second-color);
+  text-shadow: 0px 0px 10px var(--thirs-color);
+}
+
+.header .controls {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header .controls .search i {
+  font-size: 25px;
+  color: var(--second-color);
+  cursor: pointer;
+}
+.header .controls .nav-phone i {
+  font-size: 25px;
+  color: var(--second-color);
+  cursor: pointer;
+}
+.header .controls .nav-phone {
+  display: none;
+}
+
+
+
+
+
+
+.header .btn-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.header .btn-cart::after {
+  content: attr(data-quantity);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s linear;
+  top: 115%;
+}
+
+.header .icon-cart {
+  width: 24.38px;
+  height: 30.52px;
+  transition: .2s linear;
+}
+
+.header .icon-cart path {
+  fill: rgb(240, 8, 8);
+  transition: .2s linear;
+}
+
+.header .btn-cart:hover>.icon-cart {
+  transform: scale(1.2);
+}
+
+.header .btn-cart:hover>.icon-cart path {
+  fill: rgb(186, 34, 233);
+}
+
+.header .btn-cart:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: 105%;
+}
+
+.header .quantity {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header nav {
+    display: none;
+  }
+  .header .controls .nav-phone {
+    display: block;
+  }
+}
+
+/* ---------------------- */
+/* ----- End Header --- */
 /* ---------------------- */
