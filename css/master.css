@@ -16,6 +16,7 @@ ul {
 body {
   font-family: "Ubuntu", sans-serif;
   background-color: var(--main-color);
+  overflow: hidden;
 }
 
 .container {
@@ -62,6 +63,13 @@ html {
 .header {
   padding: 30px;
   border-bottom: 1px solid var(--thirs-color);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
 .header .container {
@@ -98,6 +106,7 @@ html {
   -moz-transition: var(--trans);
   -ms-transition: var(--trans);
   -o-transition: var(--trans);
+
 }
 
 .header nav ul a:hover {
@@ -117,19 +126,16 @@ html {
   color: var(--second-color);
   cursor: pointer;
 }
+
 .header .controls .nav-phone i {
   font-size: 25px;
   color: var(--second-color);
   cursor: pointer;
 }
+
 .header .controls .nav-phone {
   display: none;
 }
-
-
-
-
-
 
 .header .btn-cart {
   display: flex;
@@ -187,13 +193,65 @@ html {
 }
 
 @media (max-width: 767px) {
-  .header nav {
-    display: none;
-  }
   .header .controls .nav-phone {
     display: block;
   }
+
+  .header nav ul {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--thirs-color);
+    color: black;
+    position: fixed;
+    right: -250px;
+    top: 100%;
+    width: 250px;
+    color: black;
+    height: calc(100vh - 111px);
+    justify-content: start;
+    padding: 30px 0;
+    gap: 0;
+    transition: var(--trans);
+    -webkit-transition: var(--trans);
+    -moz-transition: var(--trans);
+    -ms-transition: var(--trans);
+    -o-transition: var(--trans);
+  }
+
+  .header nav ul.current-screen {
+    right: 0;
+  }
+
+  .header nav ul a {
+    color: var(--main-color);
+    display: block;
+    padding: 15px;
+    display: block;
+    width: 100%;
+  }
+
+  .header nav ul li:not(:last-child) {
+    border-bottom: 1px solid var(--main-color);
+  }
+
+  .header nav ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: var(--trans);
+    -webkit-transition: var(--trans);
+    -moz-transition: var(--trans);
+    -ms-transition: var(--trans);
+    -o-transition: var(--trans);
+  }
+
+  .header nav ul li:hover {
+    background-color: var(--main-color);
+  }
 }
+
 
 /* ---------------------- */
 /* ----- End Header --- */
