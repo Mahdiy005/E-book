@@ -16,7 +16,8 @@ ul {
 body {
   font-family: "Ubuntu", sans-serif;
   background-color: var(--main-color);
-  overflow: hidden;
+  overflow-x: hidden;
+  height: 5000px;
 }
 
 .container {
@@ -70,6 +71,8 @@ html {
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
+  position: fixed;
+  width: 100%;
 }
 
 .header .container {
@@ -121,10 +124,31 @@ html {
   gap: 15px;
 }
 
+.header .controls .search {
+  position: relative;
+}
 .header .controls .search i {
   font-size: 25px;
   color: var(--second-color);
   cursor: pointer;
+}
+.header .container .search-feild {
+  position: absolute;
+  top: 67px;
+  right: 0;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: var(--thirs-color);
+  caret-color: var(--main-color);
+  border-radius: 3px;
+  transition: var(--trans);
+  height: 0;
+  padding: 0 10px;
+}
+.header .container .search-feild.active-search {
+  height: auto;
+  padding: 10px;
 }
 
 .header .controls .nav-phone i {
@@ -192,6 +216,8 @@ html {
   display: none;
 }
 
+
+
 @media (max-width: 767px) {
   .header .controls .nav-phone {
     display: block;
@@ -251,7 +277,6 @@ html {
     background-color: var(--main-color);
   }
 }
-
 
 /* ---------------------- */
 /* ----- End Header --- */
