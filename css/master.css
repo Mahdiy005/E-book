@@ -17,7 +17,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   background-color: var(--main-color);
   overflow-x: hidden;
-  height: 5000px;
 }
 
 .container {
@@ -73,6 +72,8 @@ html {
   -o-transform: translateX(-50%);
   position: fixed;
   width: 100%;
+  z-index: 10000;
+  background: var(--main-color);
 }
 
 .header .container {
@@ -281,6 +282,75 @@ html {
     background-color: var(--main-color);
   }
 }
+
 /* ---------------------- */
 /* ----- End Header --- */
+/* ---------------------- */
+
+
+/* ---------------------- */
+/* ----- start landing --- */
+/* ---------------------- */
+.landing {
+  /* background-image: url('../imgs/land-2.jpeg');
+  width: cover;*/
+  height: 100vh;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.landing img {
+  width: 320px;
+  position: relative;
+  z-index: -1;
+  top: 30px;
+}
+
+.landing .text {
+  color: var(--thirs-color);
+  font-size: 32px;
+  width: 500px;
+  font-weight: bold;
+  line-height: 2;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing .text>span {
+  color: green;
+  display: inline-block;
+  width: 204px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.landing .text>span>span {}
+
+.landing .text:hover>span>span {}
+
+@media (max-width: 767px) {
+  .landing {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .landing .text {
+    text-align: center;
+    width: auto;
+    margin: 20px;
+  }
+}
+
+/* ---------------------- */
+/* ----- end landing --- */
 /* ---------------------- */
