@@ -87,6 +87,7 @@ html {
   color: var(--second-color);
   font-weight: bold;
   width: 103px;
+  user-select: none;
 }
 
 .header nav {
@@ -127,11 +128,13 @@ html {
 .header .controls .search {
   position: relative;
 }
+
 .header .controls .search i {
   font-size: 25px;
   color: var(--second-color);
   cursor: pointer;
 }
+
 .header .container .search-feild {
   position: absolute;
   top: 67px;
@@ -146,6 +149,7 @@ html {
   height: 0;
   padding: 0 10px;
 }
+
 .header .container .search-feild.active-search {
   height: auto;
   padding: 10px;
@@ -277,7 +281,6 @@ html {
     background-color: var(--main-color);
   }
 }
-
 /* ---------------------- */
 /* ----- End Header --- */
 /* ---------------------- */
