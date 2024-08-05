@@ -139,6 +139,10 @@ a {
   width: 100%;
   z-index: 10000;
   background: var(--main-color);
+
+
+
+  
 }
 
 .header .container {
@@ -146,6 +150,7 @@ a {
   align-items: center;
   gap: 20px;
   justify-content: space-between;
+
 }
 
 .header .logo {
@@ -365,6 +370,9 @@ a {
   gap: 20px;
   justify-content: space-around;
   align-items: center;
+
+
+  
 }
 
 .landing img {
@@ -485,7 +493,6 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
   justify-content: center;
   gap: 20px;
-  column-gap: 3px;
   .card {
     --bg-card: #27272a;
     --primary: #6d28d9;
