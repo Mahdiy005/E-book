@@ -246,6 +246,7 @@ a {
   border: none;
   background-color: transparent;
   position: relative;
+  cursor: pointer;
 }
 
 .header .btn-cart::after {
@@ -292,7 +293,89 @@ a {
 }
 
 
-
+/* start download list */
+.all-downloads {
+  position: fixed;
+  height:  100vh;
+  width:  70%;
+  background-color: #333;
+  z-index: 10001;
+  right: -1500px;
+  overflow-y: auto;
+  transition: var(--trans);
+  /*overflow-x: hidden;
+  */:;
+  -webkit-transition: var(--trans);
+  -moz-transition: var(--trans);
+  -ms-transition: var(--trans);
+  -o-transition: var(--trans);
+}
+.all-downloads .card {
+  width: 96%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #666;
+  display: flex;
+  gap: 10px;
+}
+.all-downloads .container-img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.all-downloads .card img {
+  width: 100px;
+  text-align: center;
+}
+.all-downloads .right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.all-downloads .right .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+.all-downloads .right .title {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.all-downloads .right .tag {
+  font-size: 14px;
+  color: #999;
+}
+.all-downloads .right .auther {
+  font-size: 14px;
+  color: #999;
+}
+.all-downloads .right .button {
+  border: navajowhite;
+  padding: 10px 20px;
+  background: #333;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+ }
+ .all-downloads > h2 {
+  text-align: center;
+  color: var(--thirs-color);
+}
+.all-downloads .close {
+  position: fixed;
+  /* left: 0;
+  top: 0; */
+  cursor: pointer;
+  font-weight: bold;
+  padding: 15px;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+}
 @media (max-width: 767px) {
   .header .controls .nav-phone {
     display: block;
@@ -350,6 +433,20 @@ a {
 
   .header nav ul li:hover {
     background-color: var(--main-color);
+  }
+
+  .all-downloads .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .all-downloads .card .right {
+    flex-direction: column;
+  }
+
+  .all-downloads .right .info {
+    gap: 12px;
+    margin-bottom: 10px;
   }
 }
 
@@ -541,7 +638,6 @@ a {
   
   .title {
     overflow: clip;
-  
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -564,7 +660,6 @@ a {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-  
     margin-top: 0.25rem;
   }
   
@@ -573,23 +668,23 @@ a {
   }
   
   .list-tags .item-list-button {
-    cursor: pointer;
+    /* cursor: pointer; */
     padding: 0.5rem;
     background-color: var(--zinc-800);
     font-size: 0.75rem;
     color: var(--light);
     border: 2px solid var(--zinc-800);
     border-radius: 0.25rem;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out;
     -webkit-border-radius: 0.25rem;
     -moz-border-radius: 0.25rem;
     -ms-border-radius: 0.25rem;
-    -o-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem; */
 }
   
-  .item-list-button:hover {
+  /* .item-list-button:hover {
     border: 2px solid var(--light);
-  }
+  } */
   .item-list-button:focus {
     background-color: var(--primary);
   
