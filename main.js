@@ -5,7 +5,7 @@ let navBtnBurger = document.querySelector(".nav-phone");
 let navToDisplay = document.querySelector(".header nav ul");
 let searchFeild = document.querySelector(".header .search-feild");
 let searchBtn = document.querySelector(".header .controls .search > i");
-let books = [];
+let books;
 let favBooks = [];
 
 navBtnBurger.onclick = function () {
@@ -33,12 +33,15 @@ function handleLocalStorage() {
     // document.querySelectorAll(".products .title > i")
     // set solid icon if loved
     JSON.parse(window.localStorage.getItem("books")).forEach((book, index) => {
-      console.log(book.loved);
+      console.log("leved" + book.loved);
       if (book.loved) {
         // document.querySelectorAll(".products .title > i").classList.toggle("fa-regular");
         document
           .querySelectorAll(".products .title > i")
           [index].classList.add("fa-solid");
+          document
+          .querySelectorAll(".products .title > i")
+          [index].classList.remove("fa-regular");
       }
     });
     // console.log(JSON.parse(window.localStorage.getItem("books")));
@@ -54,7 +57,11 @@ let dataBooks = fetch("books.json").then(async (data) => {
   return await data.json();
 });
 dataBooks.then(async (data) => {
-  books = await data;
+  if(window.localStorage.getItem("books")) {
+    books = JSON.parse(window.localStorage.getItem("books"));
+  }else {
+    books = data;
+  }
   displayBooks(books);
   // loved icon
   lovedIconHandling(books);
@@ -93,7 +100,6 @@ function displayBooks(data) {
     document.querySelector(".products .container").innerHTML += card;
   }
 }
-
 // when click on love icon
 function lovedIconHandling(data) {
   handleLocalStorage();
@@ -125,12 +131,11 @@ function lovedIconHandling(data) {
         });
       }
 
-      console.log(
-        document.querySelector(".header button[data-quantity]").dataset.quantity
-      );
       // store all array in local storage to reset loved value
       // -----Warning
       // ----> must writ books[] in json file befor storage it locally
+      // ----> Main problem : How to edit json file using js ?
+      // --------------------------------------------
       window.localStorage.setItem("books", JSON.stringify(books));
       // store if book the number of book is loved
       window.localStorage.setItem(
@@ -188,7 +193,7 @@ function displaFav(items) {
 
 function listFavLocally() {
   if (window.localStorage.getItem("fav_books")) {
-    favBooks = JSON.parse(window.localStorage.getItem("fav_books"))
+    favBooks = JSON.parse(window.localStorage.getItem("fav_books"));
     displaFav(JSON.parse(window.localStorage.getItem("fav_books")));
   }
 }
